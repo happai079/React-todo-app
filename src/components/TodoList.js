@@ -1,12 +1,14 @@
 import React from 'react';
 import TodoListItem from './TodoListIem';
 
-const TodoList = () => {
+const TodoList = ({todos}) => {
   return (
-    <div>
-      <TodoListItem/>
-      <TodoListItem/>
-      <TodoListItem/>
+    <div className='TodoList'>
+      {
+        todos.map(todo => (
+          <TodoListItem todo={todo} key={todo.id} />
+        ))
+      }
     </div>
   );
 };
